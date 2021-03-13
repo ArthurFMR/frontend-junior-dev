@@ -2,8 +2,8 @@
   <div class="md:hidden mb-8">
     <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
       <router-link
-        v-for="menu in menus"
-        :key="menu"
+        v-for="(menu, index) in menus"
+        :key="index"
         :to="menu.to"
         class="text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-900 p-2"
         >{{ menu.text }}</router-link

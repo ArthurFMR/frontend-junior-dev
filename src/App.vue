@@ -1,12 +1,10 @@
 <template>
   <div id="app">
     <NavBar />
-    <main>
-      <div class="px-6 mt-8">
-        <!-- Replace with your content -->     
-        <router-view/>
-        <!-- /End replace -->
-      </div>
+    <main class="px-6 mt-8">
+     
+        <router-view />
+     
     </main>
   </div>
 </template>
@@ -18,13 +16,17 @@ export default {
   components: {
     NavBar,
   },
+
+  data() {
+    return {};
+  },
   async mounted() {
-    /* // Users
-    const userResponse = await fetch('/api/users');
-    const users = await userResponse.json();
+    // Users
+    // const userResponse = await fetch('/api/users');
+    // const users = await userResponse.json();
     // Reports
-    const reportResponse = await fetch('/api/reports');
-    const reports = await reportResponse.json(); */
+    // const reportResponse = await fetch('/api/reports');
+    // this.reports = await reportResponse.json();
   },
 };
 </script>
@@ -37,10 +39,7 @@ export default {
 html,
 body,
 #app {
-  width: 100%;
-  height: 100%;
   margin: 0;
-  overflow: auto;
   background-color: #f7fafc;
 }
 </style>

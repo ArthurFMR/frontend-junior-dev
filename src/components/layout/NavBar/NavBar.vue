@@ -8,8 +8,8 @@
             <div class="hidden md:block ml-10">
               <div class="ml-10 space-x-16">
                 <router-link
-                  v-for="menu in menus"
-                  :key="menu"
+                  v-for="(menu, index) in menus"
+                  :key="index"
                   :to="menu.to"
                   class="text-white text-sm hover:bg-blue-900 p-2 rounded-md"
                   >{{ menu.text }}</router-link
@@ -131,7 +131,7 @@
           </div>
         </div>
       </div>
-      <!-- Mobile menu, show/hide based on menu state. -->
+      <!-- Mobile menu-->
       <MobileNavBar :menus="menus" :userInfo="userInfo" v-show="mobileMenuRevealed"/>
     </nav>
   </div>
