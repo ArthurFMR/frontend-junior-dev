@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav class="md:m-6 md:rounded-md">
+    <nav class="lg:m-6 lg:rounded-md">
       <div class="px-8">
         <div class="flex items-center justify-between h-14">
           <div class="flex">
@@ -35,7 +35,7 @@
                     />
                   </button>
                 </div>
-
+                <!--Dropdown content-->
                 <div
                   v-show="dropDownRevealed"
                   class="origin-top-right absolute right-3 mt-2 w-56 rounded-md shadow-lg py-1 bg-white focus:outline-none"
@@ -83,6 +83,7 @@
                     <span class="logout-text">Logout</span>
                   </router-link>
                 </div>
+                <!--Dropdown content-->
               </div>
             </div>
           </div>
@@ -154,7 +155,7 @@ export default {
         picture: 'https://image.freepik.com/free-vector/man-profile-cartoon_18591-58482.jpg'
       },
       menus: [
-        { to: "/", text: "Menu" },
+        { to: "/", text: "Home" },
         { to: "#", text: "Menu" },
         { to: "#", text: "Menu" },
         { to: "#", text: "Menu" },

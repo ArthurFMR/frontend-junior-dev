@@ -1,10 +1,8 @@
 <template>
   <div id="app">
     <NavBar />
-    <main class="px-6 mt-8">
-     
-        <router-view />
-     
+    <main class="px-6">
+      <router-view />
     </main>
   </div>
 </template>
@@ -38,7 +36,11 @@ export default {
 
 html,
 body,
+html,
+body,
 #app {
+  width: 100%;
+  height: 100%;
   margin: 0;
   background-color: #f7fafc;
 }

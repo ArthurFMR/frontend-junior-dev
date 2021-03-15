@@ -17,11 +17,20 @@
 
       <span>Go to Dashboard</span>
     </router-link>
+
+   
+
   </div>
 </template>
 
 <script>
-export default {};
+
+export default {
+  name: 'Home',
+  components:{
+   
+  }
+};
 </script>
 
 <style>

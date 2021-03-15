@@ -1,15 +1,14 @@
 <template>
   <div>
     <header class="mb-4">
-      <div class="ml-12">
-        <div class="bread-color">
-          <router-link to="/">Home</router-link> /
-          <span class="underline">Reports & Insights</span>
-        </div>
+      <div class="ml-12 bread-color">
+        <router-link to="/">Home</router-link> /
+        <span class="underline">Reports & Insights</span>
       </div>
+      
     </header>
-    <div class="grid lg:grid-cols-3 gap-x-6 sm:grid-cols-1 gap-y-6">
-      <div class="shadow-md bg-white">
+    <div class="grid lg:grid-cols-3 gap-x-6 sm:grid-cols-1 gap-y-6 ">
+      <div class="shadow-md bg-white grid justify-items-stretch">
         <div class="mt-4 mx-4">
           <p class="text-lg chart-title">Why do you create a startup?</p>
           <span class="chart-subtitle">Trends</span>
@@ -19,10 +18,11 @@
           :series="reportSeries"
           :options="optionsPieChart"
           width="370"
-          class="flex justify-center mt-6"
+          class="justify-self-center mb-3"
         />
       </div>
-      <div class="md:col-span-2 shadow-md bg-white">
+      <div class="px-4 py-6 lg:col-span-2 shadow-md bg-white min-w-0">
+        <p class="mb-4 text-lg chart-title">Employees</p>
         <UsersTable />
       </div>
     </div>
@@ -33,11 +33,13 @@
 import Chart from "../components/Chart";
 import UsersTable from "../components/UsersTable";
 
+
 export default {
   name: "Dashboard",
   components: {
     Chart,
     UsersTable,
+   
   },
 
   data() {
