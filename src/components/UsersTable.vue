@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="border border-gray-200 rounded-lg overflow-x-auto">
-      <table class="w-full divide-y divide-gray-200 ">
+      <table class="w-full divide-y divide-gray-200">
         <thead>
           <tr>
             <th
@@ -16,7 +16,7 @@
         </thead>
         <tbody class="bg-white divide-y divide-gray-200">
           <tr v-for="user in paginator" :key="user.id">
-            <td class="px-6 py-4 ">
+            <td class="px-6 py-4">
               <div class="flex">
                 <div>
                   <img class="h-10 w-10 rounded-full" :src="user.profile_img" />
@@ -55,7 +55,7 @@
             </td>
 
             <!--Actions column-->
-            <td class="px-6 py-4 ">
+            <td class="px-6 py-4">
               <ActionsDropDown />
             </td>
           </tr>
@@ -70,12 +70,11 @@
         :key="numberPage"
         @click="currentPage = numberPage"
         class="mr-2 mt-2 py-2 px-4 bg-transparent hover:bg-gray-300 text-grey-500 font-medium border border-gray-300 rounded"
-        :class="{ 'bg-gray-300': (numberPage == currentPage) }"
+        :class="{ 'bg-gray-300': numberPage == currentPage }"
       >
         {{ numberPage }}
       </button>
     </div>
-    
   </div>
 </template>
 
@@ -85,26 +84,20 @@ import ActionsDropDown from "./ActionsDropDown";
 
 export default {
   name: "UsersTable",
+  props: ["users", "headerLabels"],
   components: {
     ActionsDropDown,
-    
   },
 
   data() {
     return {
-      users: [],
       totalPages: 0,
       currentPage: 1,
       pageSize: 4,
-      headerLabels: ["Employee", "Last login", "Department", "Status"],
     };
   },
 
-  async created() {
-    const userResponse = await fetch("/api/users");
-    const usersObj = await userResponse.json();
-    this.users = usersObj.users;
-
+  beforeUpdate() {
     this.totalPages = Math.ceil(this.users.length / this.pageSize);
   },
 
